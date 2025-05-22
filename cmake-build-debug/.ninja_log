@@ -1,5 +1,10 @@
 # ninja log v5
-10	1632	7696371214382904	CMakeFiles/Eco_Project.dir/main.cpp.obj	59df1cc730ba13bf
-1674	2139	7696371220457156	Eco_Project.exe	3301df6ae6099702
-10	644	7696371463515000	CMakeFiles/Eco_Project.dir/main.cpp.obj	59df1cc730ba13bf
-645	744	7696371464451810	Eco_Project.exe	3301df6ae6099702
+7	915	7696442707542577	CMakeFiles/Eco_Project.dir/main.cpp.obj	59df1cc730ba13bf
+13	738	7696397507045867	CMakeFiles/Eco_Project.dir/UserProfile.cpp.obj	2a440650196cf0b2
+756	883	7696425317882782	Eco_Project.exe	24f6fb293f8e4d88
+3	357	7696445584877673	build.ninja	e818f08682b610d8
+14	837	7696423345276020	CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj	71055e39acd0b26d
+13	1038	7696447563312774	CMakeFiles/Eco_Project.dir/main.cpp.obj	59df1cc730ba13bf
+18	1131	7696447564260676	CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj	c3bc4e4003c6129
+21	1171	7696447564661504	CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj	18b33bde5f8413d1
+1174	1351	7696447566415410	Eco_Project.exe	4b6fbe341f95c1ef

@@ -3,4 +3,10 @@ project(Eco_Project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Eco_Project main.cpp)
+add_executable(Eco_Project main.cpp
+        src/Core/UserProfile.cpp
+        src/Core/UserProfile.h
+        src/Core/EcoAction.cpp
+        src/Core/EcoAction.h
+        src/Core/TransportAction.cpp
+        src/Core/TransportAction.h)
