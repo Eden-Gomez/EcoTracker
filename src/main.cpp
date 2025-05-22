@@ -1,25 +1,21 @@
+#include "GUI/Dashboard.h"
 #include <iostream>
-#include "Core/EcoAction.h"
-#include "Core/TransportAction.h"
-#include "Core/UserProfile.h"
+#include <windows.h>  // For SetConsoleOutputCP
 
 int main() {
-    // Base class action
-    EcoAction recycling("Plastic Recycling", 2.3f);
-    std::cout << recycling.getDetails() << "\n\n";
-
-    // Derived class action
-    TransportAction bikeCommute("Bicycle", 1.8f);
-    std::cout << bikeCommute.getFullDetails() << std::endl;
-
+    SetConsoleOutputCP(CP_UTF8);  // this line is to enable UTF-8 output
     try {
-        UserProfile user("EcoWarrior");
-        user.addPoints(150);
-        user.saveToFile("userdata.txt");
+        UserProfile user("ClimateChampion");
+        Dashboard dashboard(user);
 
-        UserProfile loadedUser("");
-        loadedUser.loadFromFile("userdata.txt");
-        loadedUser.displayProfile();
+        user.addPoints(150);  // Bike commute
+        dashboard.addAction("🚲 Biked to school (50 pts)");
+
+        user.addPoints(300);  // Vegan week
+        dashboard.addAction("🌱 7 Vegan meals (300 pts)");
+
+        dashboard.display();
+
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }

@@ -15,6 +15,9 @@ public:
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
 
+    int getCarbonPoints() const;
+
 };
+
 
 #endif //ECOTRACKER_USERPROFILE_H

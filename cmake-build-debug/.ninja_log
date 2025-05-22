@@ -1,14 +1,18 @@
 # ninja log v5
 18	1131	7696447564260676	CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj	c3bc4e4003c6129
 13	1038	7696447563312774	CMakeFiles/Eco_Project.dir/main.cpp.obj	59df1cc730ba13bf
-1174	1351	7696447566415410	Eco_Project.exe	4b6fbe341f95c1ef
+1354	1531	7696465816550785	Eco_Project.exe	78ca9297c6849bf5
 13	738	7696397507045867	CMakeFiles/Eco_Project.dir/UserProfile.cpp.obj	2a440650196cf0b2
-3	357	7696450858462919	build.ninja	e818f08682b610d8
-14	837	7696423345276020	CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj	71055e39acd0b26d
+3	280	7696538804514759	build.ninja	e818f08682b610d8
+17	1191	7696465813223351	CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj	71055e39acd0b26d
+12	1199	7696465813308600	CMakeFiles/Eco_Project.dir/src/main.cpp.obj	aaa6dfbb2c45a038
 21	1171	7696447564661504	CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj	18b33bde5f8413d1
-3	280	7696450858462919	build.ninja	e818f08682b610d8
-9	814	7696450867242638	CMakeFiles/Eco_Project.dir/src/main.cpp.obj	aaa6dfbb2c45a038
-815	958	7696450868635754	Eco_Project.exe	f9aaf06104d0402
-13	1147	7696453910375839	CMakeFiles/Eco_Project.dir/src/main.cpp.obj	aaa6dfbb2c45a038
-19	1217	7696453911065645	CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj	71055e39acd0b26d
-1217	1437	7696453913207230	Eco_Project.exe	f9aaf06104d0402
+21	1353	7696465814831934	CMakeFiles/Eco_Project.dir/src/GUI/Dashboard.cpp.obj	474a05f8cdabafc9
+37	1852	7696540122849319	CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj	e227e05ab95b7c33
+31	1904	7696540123391647	CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj	552ded7c99b04c01
+27	2005	7696540124440856	CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj	f7eec42dd566b8ff
+19	2069	7696540125072834	CMakeFiles/Eco_Project.dir/src/main.cpp.obj	e98f96f0e4591c7e
+41	2265	7696540127048982	CMakeFiles/Eco_Project.dir/src/GUI/Dashboard.cpp.obj	bcc3d16dee199a89
+2265	2482	7696540129139844	Eco_Project.exe	78ca9297c6849bf5
+10	3155	7696542938811574	CMakeFiles/Eco_Project.dir/src/main.cpp.obj	e98f96f0e4591c7e
+3159	3309	7696542940329817	Eco_Project.exe	78ca9297c6849bf5

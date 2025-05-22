@@ -50,28 +50,39 @@ cmake_ninja_workdir = C$:/Users/USER/CLionProjects/Eco_Project/cmake-build-debug
 build cmake_object_order_depends_target_Eco_Project: phony || CMakeFiles/Eco_Project.dir
 
 build CMakeFiles/Eco_Project.dir/src/main.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/main.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
   DEP_FILE = CMakeFiles\Eco_Project.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Eco_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src
 
 build CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/Core/UserProfile.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
   DEP_FILE = CMakeFiles\Eco_Project.dir\src\Core\UserProfile.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Eco_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\Core
 
 build CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/Core/EcoAction.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
   DEP_FILE = CMakeFiles\Eco_Project.dir\src\Core\EcoAction.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Eco_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\Core
 
 build CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/Core/TransportAction.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
   DEP_FILE = CMakeFiles\Eco_Project.dir\src\Core\TransportAction.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Eco_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\Core
+
+build CMakeFiles/Eco_Project.dir/src/GUI/Dashboard.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/GUI/Dashboard.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
+  DEP_FILE = CMakeFiles\Eco_Project.dir\src\GUI\Dashboard.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Eco_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\GUI
 
 
 # =============================================================================
@@ -81,7 +92,7 @@ build CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj: CXX_COMPILER_
 #############################################
 # Link the executable Eco_Project.exe
 
-build Eco_Project.exe: CXX_EXECUTABLE_LINKER__Eco_Project_Debug CMakeFiles/Eco_Project.dir/src/main.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj
+build Eco_Project.exe: CXX_EXECUTABLE_LINKER__Eco_Project_Debug CMakeFiles/Eco_Project.dir/src/main.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj CMakeFiles/Eco_Project.dir/src/GUI/Dashboard.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Eco_Project.dir

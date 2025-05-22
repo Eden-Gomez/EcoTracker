@@ -9,4 +9,7 @@ add_executable(Eco_Project src/main.cpp
         src/Core/EcoAction.cpp
         src/Core/EcoAction.h
         src/Core/TransportAction.cpp
-        src/Core/TransportAction.h)
+        src/Core/TransportAction.h
+        src/GUI/Dashboard.cpp
+        src/GUI/Dashboard.h)
+add_definitions(-DUNICODE -D_UNICODE)
