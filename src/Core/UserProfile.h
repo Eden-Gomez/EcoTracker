@@ -12,6 +12,9 @@ public:
     explicit UserProfile(const std::string& name);
     void addPoints(int points);
     void displayProfile() const;
+    void saveToFile(const std::string& filename) const;
+    void loadFromFile(const std::string& filename);
+
 };
 
 #endif //ECOTRACKER_USERPROFILE_H
