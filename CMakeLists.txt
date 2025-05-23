@@ -17,5 +17,7 @@ add_executable(Eco_Project src/main.cpp
         src/Core/ActionLogger.cpp
         src/Core/ActionLogger.h
         src/Core/FoodChoice.cpp
-        src/Core/FoodChoice.h)
+        src/Core/FoodChoice.h
+        src/Core/Achievement.cpp
+        src/Core/Achievement.h)
 add_definitions(-DUNICODE -D_UNICODE)

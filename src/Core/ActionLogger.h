@@ -17,10 +17,10 @@ public:
     void addAction(std::unique_ptr<EcoAction> action);
     void displayRecentActions(int count = 5) const;
     float getTotalCo2Saved() const;
-
-public:
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
+    size_t getTotalActions() const { return actions.size(); }
+
 };
 
 #endif // ACTIONLOGGER_H

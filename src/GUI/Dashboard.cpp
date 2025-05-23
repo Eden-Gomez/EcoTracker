@@ -1,14 +1,16 @@
 #include "../GUI/Dashboard.h"
 #include <iostream>
 #include "../Core/UserProfile.h"
+#include "../Core/Achievement.h"
 #include <iomanip>  // For setw()
 
 // Color codes for terminal (ANSI escape codes)
 #define COLOR_GREEN "\033[32m"
 #define COLOR_RESET "\033[0m"
 
-Dashboard::Dashboard(const UserProfile& profile) : user(profile) {}
-
+//Dashboard::Dashboard(const UserProfile& profile) : user(profile) {}
+Dashboard::Dashboard(const UserProfile& profile, const ActionLogger& actionLogger)
+        : user(profile), logger(actionLogger) {}
 void Dashboard::addAction(const std::string& action) {
     recentActions.push_back(action);
     if(recentActions.size() > 5) recentActions.erase(recentActions.begin());
@@ -34,12 +36,17 @@ void Dashboard::display() const {
 
     std::cout << "\n🌟 Level: " << user.getCarbonPoints()/1000 + 1
               << "\nPoints: " << user.getCarbonPoints()
-              << "\n\nRecent Actions:\n";
+              << "\nTotal CO₂ Saved: " << logger.getTotalCo2Saved() << " kg\n";
 
-    for(const auto& action : recentActions){
-        std::cout << " • " << action << "\n";
-    }
+    logger.displayRecentActions();
 
     std::cout << "\nProgress to Next Level:\n";
     printProgressBar((user.getCarbonPoints() % 1000)/1000.0f);
+
+    static AchievementSystem achievements;
+    achievements.checkAchievements(logger);
+    achievements.displayAchievements();
 }
+
+
+

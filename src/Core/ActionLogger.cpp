@@ -5,6 +5,7 @@
 #include <fstream>
 #include <memory>
 
+
 void ActionLogger::saveToFile(const std::string& filename) const {
     std::ofstream file(filename);
     if(!file) throw std::runtime_error("Cannot save actions");
