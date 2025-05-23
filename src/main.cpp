@@ -1,10 +1,52 @@
 #include "GUI/Menu.h"
 #include "Core/UserProfile.h"
 #include "GUI/Dashboard.h"
+#include "Core/TransportAction.h"
+#include "Core/ActionLogger.h"
+#include "Core/FoodChoice.h"
 #include <iostream>
 #include <windows.h>  // For SetConsoleOutputCP
 
+float getValidatedInput(const std::string& prompt) {
+    float input;
+    std::cout << prompt;
+    while (!(std::cin >> input)) {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Invalid input. Try again: ";
+    }
+    return input;
+}
 
+
+void logNewAction(ActionLogger& logger) {
+    Menu typeMenu("Select Action Type");
+    typeMenu.addItem("Transportation");
+    typeMenu.addItem("Food Choice");
+
+    switch(typeMenu.display()) {
+        case 1: {
+            std::string vehicle;
+            float co2 = getValidatedInput("CO₂ saved (kg): ");
+            std::cout << "Vehicle type: ";
+            std::cin >> vehicle;
+            logger.addAction(std::make_unique<TransportAction>(vehicle, co2));
+            break;
+        }
+        case 2: {
+            std::string meal;
+            bool vegan;
+            float co2 = getValidatedInput("CO₂ saved (kg): ");
+            std::cout << "Meal description: ";
+            std::cin.ignore();
+            std::getline(std::cin, meal);
+            std::cout << "Vegan? (1/0): ";
+            std::cin >> vegan;
+            logger.addAction(std::make_unique<FoodChoice>(meal, vegan, co2));
+            break;
+        }
+    }
+}
 
 
 
@@ -13,6 +55,7 @@ void mainMenuLoop(UserProfile& user, Dashboard& dashboard) {
     mainMenu.addItem("View Dashboard");
     mainMenu.addItem("Log New Action");
     mainMenu.addItem("Save & Exit");
+
 
     while(true) {
         switch(mainMenu.display()) {
@@ -33,6 +76,22 @@ void mainMenuLoop(UserProfile& user, Dashboard& dashboard) {
                 return;
         }
     }
+}
+
+void logTransportAction(ActionLogger& logger) {
+    std::string vehicle;
+    std::cout << "Enter vehicle type: ";
+    std::cin.ignore();
+    std::getline(std::cin, vehicle);
+
+    float co2;
+    std::cout << "Enter CO₂ saved (kg): ";
+    std::cin >> co2;
+
+    logger.addAction(
+            std::make_unique<TransportAction>(vehicle, co2)
+    );
+    std::cout << "Action logged successfully!\n";
 }
 
 int main() {

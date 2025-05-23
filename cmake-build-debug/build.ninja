@@ -91,6 +91,20 @@ build CMakeFiles/Eco_Project.dir/src/GUI/Menu.cpp.obj: CXX_COMPILER__Eco_Project
   OBJECT_DIR = CMakeFiles\Eco_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\GUI
 
+build CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/Core/ActionLogger.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
+  DEP_FILE = CMakeFiles\Eco_Project.dir\src\Core\ActionLogger.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Eco_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\Core
+
+build CMakeFiles/Eco_Project.dir/src/Core/FoodChoice.cpp.obj: CXX_COMPILER__Eco_Project_unscanned_Debug C$:/Users/USER/CLionProjects/Eco_Project/src/Core/FoodChoice.cpp || cmake_object_order_depends_target_Eco_Project
+  DEFINES = -DUNICODE -D_UNICODE
+  DEP_FILE = CMakeFiles\Eco_Project.dir\src\Core\FoodChoice.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Eco_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Eco_Project.dir\src\Core
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Eco_Project
@@ -99,7 +113,7 @@ build CMakeFiles/Eco_Project.dir/src/GUI/Menu.cpp.obj: CXX_COMPILER__Eco_Project
 #############################################
 # Link the executable Eco_Project.exe
 
-build Eco_Project.exe: CXX_EXECUTABLE_LINKER__Eco_Project_Debug CMakeFiles/Eco_Project.dir/src/main.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj CMakeFiles/Eco_Project.dir/src/GUI/Dashboard.cpp.obj CMakeFiles/Eco_Project.dir/src/GUI/Menu.cpp.obj
+build Eco_Project.exe: CXX_EXECUTABLE_LINKER__Eco_Project_Debug CMakeFiles/Eco_Project.dir/src/main.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/UserProfile.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj CMakeFiles/Eco_Project.dir/src/GUI/Dashboard.cpp.obj CMakeFiles/Eco_Project.dir/src/GUI/Menu.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj CMakeFiles/Eco_Project.dir/src/Core/FoodChoice.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Eco_Project.dir
