@@ -4,10 +4,6 @@
 #include "EcoAction.h"
 #include <string>
 
-/**
- * Specialized class for transportation-related eco actions
- * Inherits from EcoAction base class
- */
 class TransportAction : public EcoAction {
 private:
     std::string vehicleType;
@@ -15,6 +11,10 @@ private:
 public:
     TransportAction(std::string vehicle, float co2);
     std::string getDetails() const override;
+    int calculatePoints() const override;
+
+    // Add this getter
+    std::string getVehicle() const { return vehicleType; }
 };
 
-#endif // TRANSPORTACTION_H
+#endif

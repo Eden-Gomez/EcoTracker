@@ -1,26 +1,32 @@
 #ifndef ACTIONLOGGER_H
 #define ACTIONLOGGER_H
 
-#include "EcoAction.h"
-#include <memory>
 #include <vector>
+#include <memory>
+#include "EcoAction.h"
+#include "TransportAction.h"
 
-/**
- * Manages storage and retrieval of eco actions
- * Uses smart pointers for automatic memory management
- */
 class ActionLogger {
 private:
     std::vector<std::unique_ptr<EcoAction>> actions;
+    int bikeCount = 0;
 
 public:
-    void addAction(std::unique_ptr<EcoAction> action);
-    void displayRecentActions(int count = 5) const;
-    float getTotalCo2Saved() const;
+    // Add these EXACT declarations
+    int getTotalPoints() const;
+
+    void addAction(std::unique_ptr<EcoAction> action) ;
+
+    int getTransportActionCount() const { return bikeCount; }
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
-    size_t getTotalActions() const { return actions.size(); }
+    void displayRecentActions(int count = 5) const;  // Add const
 
+    // Getters (KEEP ONLY ONE getActions DECLARATION)
+    size_t getTotalActions() const { return actions.size(); }
+    float getTotalCo2Saved() const;
+
+    const std::vector<std::unique_ptr<EcoAction>>& getActions() const { return actions; }  // Only this one
 };
 
-#endif // ACTIONLOGGER_H
+#endif

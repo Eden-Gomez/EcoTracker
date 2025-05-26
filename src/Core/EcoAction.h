@@ -14,8 +14,8 @@ public:
     EcoAction(std::string name, float co2);
 
     virtual std::string getDetails() const = 0;  // PURE VIRTUAL
+    virtual int calculatePoints() const = 0;
 
-    int calculatePoints() const;
     std::string getTimestamp() const;
     float getCo2Saved() const { return co2Saved; }
 

@@ -4,9 +4,14 @@
 #include "Core/TransportAction.h"
 #include "Core/ActionLogger.h"
 #include "Core/FoodChoice.h"
+#include "Core/Achievement.h"
 #include <iostream>
 #include <windows.h>  // For SetConsoleOutputCP
 #include <string>
+#include <vector>
+#include <fstream>
+#include <filesystem>
+
 
 // Show CO₂ help
 void showCo2Reference() {
@@ -97,6 +102,14 @@ void logNewAction(ActionLogger& logger) {
     std::cin.ignore();  // Pause
 }
 
+//void ActionLogger::loadFromFile(const std::string& filename) {
+//    if(!std::filesystem::exists(filename)) return;
+//
+//    std::ifstream file(filename);
+//    if(!file) throw std::runtime_error("Cannot load actions");
+//    // Rest of existing loading code...
+//}
+
 void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger) {
     Menu mainMenu("Main Menu");
     mainMenu.addItem("View Dashboard");
@@ -125,10 +138,23 @@ void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger)
 }
 
 int main() {
-    SetConsoleOutputCP(CP_UTF8);  // Enable UTF-8 in Windows console
+    SetConsoleOutputCP(CP_UTF8);
     try {
         UserProfile user("EcoWarrior");
         ActionLogger logger;
+
+        try {
+            user.loadFromFile("userdata.txt");
+        } catch (const std::exception&) {
+            std::cout << "No user data found - starting fresh!\n";
+        }
+
+        try {
+            logger.loadFromFile("actions.dat");
+        } catch (const std::exception&) {
+            std::cout << "No action history found - new log started!\n";
+        }
+
         Dashboard dashboard(user, logger);
         mainMenuLoop(user, dashboard, logger);
     } catch (const std::exception& e) {
