@@ -29,6 +29,4 @@ void UserProfile::loadFromFile(const std::string& filename) {
         throw std::runtime_error("Cannot load file!");
     }
 }
-int UserProfile::getCarbonPoints() const {
-    return carbonPoints;
-}
+

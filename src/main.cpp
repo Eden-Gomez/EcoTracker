@@ -52,7 +52,7 @@ float getValidatedInput(const std::string& prompt) {
     }
 }
 
-void logNewAction(ActionLogger& logger) {
+void logNewAction(UserProfile& user, ActionLogger& logger, AchievementSystem& achievements) {
     Menu typeMenu("Select Action Type");
     typeMenu.addItem("Transportation");
     typeMenu.addItem("Food Choice");
@@ -68,6 +68,11 @@ void logNewAction(ActionLogger& logger) {
 
             logger.addAction(std::make_unique<TransportAction>(vehicle, co2));
             std::cout << "\n✅ Transportation action logged!\n";
+            auto transport = std::make_unique<TransportAction>(vehicle, co2);
+            int points = transport->calculatePoints();
+            user.addPoints(points);  // Add points to user
+            logger.addAction(std::move(transport));
+
             break;
         }
         case 2: {
@@ -99,6 +104,9 @@ void logNewAction(ActionLogger& logger) {
     }
     std::cout << "\n✨ Achievement Progress Updated!\n";
 
+    //yup, and this line is to update achievements after each section
+    achievements.checkAchievements(logger);
+
     std::cin.ignore();  // Pause
 }
 
@@ -110,7 +118,8 @@ void logNewAction(ActionLogger& logger) {
 //    // Rest of existing loading code...
 //}
 
-void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger) {
+void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger, AchievementSystem& achievements)
+ {
     Menu mainMenu("Main Menu");
     mainMenu.addItem("View Dashboard");
     mainMenu.addItem("Log New Action");
@@ -126,8 +135,9 @@ void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger)
                 break;
 
             case 2:
-                logNewAction(logger);
+                logNewAction(user,logger , achievements);
                 break;
+
 
             case 3:
                 user.saveToFile("userdata.txt");
@@ -142,6 +152,7 @@ int main() {
     try {
         UserProfile user("EcoWarrior");
         ActionLogger logger;
+        AchievementSystem achievements;
 
         try {
             user.loadFromFile("userdata.txt");
@@ -156,7 +167,7 @@ int main() {
         }
 
         Dashboard dashboard(user, logger);
-        mainMenuLoop(user, dashboard, logger);
+        mainMenuLoop(user, dashboard, logger, achievements);
     } catch (const std::exception& e) {
         std::cerr << "Fatal Error: " << e.what() << std::endl;
         return 1;

@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/USER/CLionProjects/Eco_Project/cmake-build-debug",
-		"source" : "C:/Users/USER/CLionProjects/Eco_Project"
+		"build" : "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/cmake-build-debug",
+		"source" : "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App"
 	},
 	"version" : 
 	{

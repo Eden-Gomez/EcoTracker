@@ -15,7 +15,12 @@ public:
     // Add these EXACT declarations
     int getTotalPoints() const;
 
-    void addAction(std::unique_ptr<EcoAction> action) ;
+    void addAction(std::unique_ptr<EcoAction> action)  ;
+
+//    {
+//        if(dynamic_cast<TransportAction*>(action.get())) bikeCount++;
+//        actions.push_back(std::move(action));
+//    }
 
     int getTransportActionCount() const { return bikeCount; }
     void saveToFile(const std::string& filename) const;

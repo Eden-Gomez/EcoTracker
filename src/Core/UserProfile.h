@@ -11,11 +11,12 @@ private:
 public:
     explicit UserProfile(const std::string& name);
     void addPoints(int points);
+    //    void addPoints(int points) { carbonPoints += points; };
     void displayProfile() const;
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
 
-    int getCarbonPoints() const;
+    int getCarbonPoints() const { return carbonPoints; } ;
 
 };
 

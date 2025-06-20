@@ -1,3 +1,3 @@
-C:/Users/USER/CLionProjects/Eco_Project/cmake-build-debug/CMakeFiles/Eco_Project.dir
-C:/Users/USER/CLionProjects/Eco_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/USER/CLionProjects/Eco_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/cmake-build-debug/CMakeFiles/Eco_Project.dir
+C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/cmake-build-debug/CMakeFiles/rebuild_cache.dir
