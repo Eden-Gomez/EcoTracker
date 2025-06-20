@@ -1,3 +1,5 @@
+
+
 #include "../GUI/Dashboard.h"
 #include <iostream>
 #include "../Core/UserProfile.h"
@@ -9,13 +11,9 @@
 #define COLOR_GREEN "\033[32m"
 #define COLOR_RESET "\033[0m"
 
-
 Dashboard::Dashboard(const UserProfile& profile, const ActionLogger& actionLogger)
-        : user(profile), logger(actionLogger) {}
-//void Dashboard::addAction(const std::string& action) {
-//    recentActions.push_back(action);
-//    if(recentActions.size() > 5) recentActions.erase(recentActions.begin());
-//}
+        : user(profile), logger(actionLogger),
+          dailyChallenge("Bike 10km", 10) {}  // Sample challenge
 
 void Dashboard::printHeader() const {
     std::cout << COLOR_GREEN
@@ -24,20 +22,15 @@ void Dashboard::printHeader() const {
 }
 
 void Dashboard::printProgressBar(float percentage) const {
-    // Calculate the number of bars to show (minimum 1 if there's progress)
-    std::cout << "[";
     const int totalBars = 20;
     int bars = static_cast<int>(std::round(percentage * totalBars));
-    int filledBars = static_cast<int>(percentage * totalBars);
 
-    // Ensure at least one bar is shown if there's any progress
     if (percentage > 0.0f && bars == 0) {
-        bars = 1;
+        bars = 1;  // Ensure at least 1 bar if progress > 0
     }
 
-    // Print the progress bar
     std::cout << "[";
-    for(int i = 0; i < totalBars; i++) {
+    for (int i = 0; i < totalBars; i++) {
         if (i < bars) {
             std::cout << "=";
         } else {
@@ -56,28 +49,26 @@ void Dashboard::display() const {
     const int points = user.getCarbonPoints();
     const int level = points / 1000 + 1;
     const int progressPoints = points % 1000;
-    const float progressPercentage = progressPoints / 1000.0f;
+    const float progressPercentage = static_cast<float>(progressPoints) / 1000.0f;
 
+    const auto& recentActions = logger.getRecentActions();
 
+    // Daily challenge display
+    std::cout << "\n=== Daily Challenge ===\n";
+    std::cout << dailyChallenge.getStatus() << "\n";
 
-    std::cout << "\n🌟 Level: " << user.getCarbonPoints()/1000 + 1
-              << "\nPoints: " << user.getCarbonPoints()
+    std::cout << "\n🌟 Level: " << level
+              << "\nPoints: " << points
               << "\nTotal CO₂ Saved: " << logger.getTotalCo2Saved() << " kg\n";
-//This line is to display achievements, remember
+
     achievements.displayAchievements();
 
-    // Display recent actions
     std::cout << "\n=== Recent Actions ===\n";
-    logger.displayRecentActions();
+    int count = 1;
+    for (const auto& actionPtr : recentActions) {
+        std::cout << count++ << ". " << actionPtr->getSummary() << "\n";
+    }
 
-
-    // Display progress bar
     std::cout << "\nProgress to Next Level:\n";
-    printProgressBar((user.getCarbonPoints() % 1000)/1000.0f);
-
-
-
-
+    printProgressBar(progressPercentage);
 }
-
-

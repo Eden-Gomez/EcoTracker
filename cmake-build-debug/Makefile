@@ -176,6 +176,30 @@ src/Core/ActionLogger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Eco_Project.dir\build.make CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.s
 .PHONY : src/Core/ActionLogger.cpp.s
 
+src/Core/DailyChallenge.obj: src/Core/DailyChallenge.cpp.obj
+.PHONY : src/Core/DailyChallenge.obj
+
+# target to build an object file
+src/Core/DailyChallenge.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Eco_Project.dir\build.make CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.obj
+.PHONY : src/Core/DailyChallenge.cpp.obj
+
+src/Core/DailyChallenge.i: src/Core/DailyChallenge.cpp.i
+.PHONY : src/Core/DailyChallenge.i
+
+# target to preprocess a source file
+src/Core/DailyChallenge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Eco_Project.dir\build.make CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.i
+.PHONY : src/Core/DailyChallenge.cpp.i
+
+src/Core/DailyChallenge.s: src/Core/DailyChallenge.cpp.s
+.PHONY : src/Core/DailyChallenge.s
+
+# target to generate assembly for a file
+src/Core/DailyChallenge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Eco_Project.dir\build.make CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.s
+.PHONY : src/Core/DailyChallenge.cpp.s
+
 src/Core/EcoAction.obj: src/Core/EcoAction.cpp.obj
 .PHONY : src/Core/EcoAction.obj
 
@@ -359,6 +383,9 @@ help:
 	@echo ... src/Core/ActionLogger.obj
 	@echo ... src/Core/ActionLogger.i
 	@echo ... src/Core/ActionLogger.s
+	@echo ... src/Core/DailyChallenge.obj
+	@echo ... src/Core/DailyChallenge.i
+	@echo ... src/Core/DailyChallenge.s
 	@echo ... src/Core/EcoAction.obj
 	@echo ... src/Core/EcoAction.i
 	@echo ... src/Core/EcoAction.s

@@ -4,10 +4,12 @@
 #include "../Core/UserProfile.h"
 #include "../Core/ActionLogger.h"
 #include "../Core/Achievement.h"
+#include "../Core/DailyChallenge.h"
 #include <vector>
 
 class Dashboard {
 private:
+    DailyChallenge dailyChallenge;
     const UserProfile& user;
     const ActionLogger& logger;
     mutable AchievementSystem achievements;  // ADD

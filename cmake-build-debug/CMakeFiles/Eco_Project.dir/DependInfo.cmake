@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/Achievement.cpp" "CMakeFiles/Eco_Project.dir/src/Core/Achievement.cpp.obj" "gcc" "CMakeFiles/Eco_Project.dir/src/Core/Achievement.cpp.obj.d"
   "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/ActionLogger.cpp" "CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj" "gcc" "CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj.d"
+  "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/DailyChallenge.cpp" "CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.obj" "gcc" "CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.obj.d"
   "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/EcoAction.cpp" "CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj" "gcc" "CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj.d"
   "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/FoodChoice.cpp" "CMakeFiles/Eco_Project.dir/src/Core/FoodChoice.cpp.obj" "gcc" "CMakeFiles/Eco_Project.dir/src/Core/FoodChoice.cpp.obj.d"
   "C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/TransportAction.cpp" "CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj" "gcc" "CMakeFiles/Eco_Project.dir/src/Core/TransportAction.cpp.obj.d"

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Eco_Project.dir/src/Core/Achievement.cpp.obj.d"
   "CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj"
   "CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj.d"
+  "CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.obj"
+  "CMakeFiles/Eco_Project.dir/src/Core/DailyChallenge.cpp.obj.d"
   "CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj"
   "CMakeFiles/Eco_Project.dir/src/Core/EcoAction.cpp.obj.d"
   "CMakeFiles/Eco_Project.dir/src/Core/FoodChoice.cpp.obj"

@@ -145,6 +145,8 @@ CMakeFiles/Eco_Project.dir/src/Core/ActionLogger.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/charconv.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
+ C:\Users\USER\CLionProjects\Working_Eco-Tracker_App\src\Core\UserProfile.h \
+ C:\Users\USER\CLionProjects\Working_Eco-Tracker_App\src\Core\DailyChallenge.h \
  C:\Users\USER\CLionProjects\Working_Eco-Tracker_App\src\Core\TransportAction.h \
  C:\Users\USER\CLionProjects\Working_Eco-Tracker_App\src\Core\FoodChoice.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \

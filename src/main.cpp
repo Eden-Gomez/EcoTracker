@@ -52,7 +52,7 @@ float getValidatedInput(const std::string& prompt) {
     }
 }
 
-void logNewAction(UserProfile& user, ActionLogger& logger, AchievementSystem& achievements) {
+void logNewAction(UserProfile& user, ActionLogger& logger, AchievementSystem& achievements, DailyChallenge& challenge) {
     Menu typeMenu("Select Action Type");
     typeMenu.addItem("Transportation");
     typeMenu.addItem("Food Choice");
@@ -66,14 +66,16 @@ void logNewAction(UserProfile& user, ActionLogger& logger, AchievementSystem& ac
             std::cout << "Vehicle type (e.g., Bicycle, Electric Scooter): ";
             std::getline(std::cin, vehicle);
 
-            logger.addAction(std::make_unique<TransportAction>(vehicle, co2));
-            std::cout << "\n✅ Transportation action logged!\n";
             auto transport = std::make_unique<TransportAction>(vehicle, co2);
-            int points = transport->calculatePoints();
-            user.addPoints(points);  // Add points to user
-            logger.addAction(std::move(transport));
 
-            break;
+            int points = transport->calculatePoints();
+            user.addPoints(points);
+
+            transport->applyEffects(user, challenge);  // Daily challenge logic
+
+            logger.addAction(std::move(transport));
+            std::cout << "\n✅ Transportation action logged!\n";
+            return;
         }
         case 2: {
             std::string meal;
@@ -96,10 +98,15 @@ void logNewAction(UserProfile& user, ActionLogger& logger, AchievementSystem& ac
                 std::cerr << "Invalid input! Please enter 1 or 0\n";
             }
 
-            logger.addAction(std::make_unique<FoodChoice>(meal, vegan, co2));
-            std::cout << "\n✅ Food choice logged!\n";
-            break;
+            auto food = std::make_unique<FoodChoice>(meal, vegan, co2);
+            int points = food->calculatePoints();
+            user.addPoints(points);
+
+            logger.addAction(std::move(food));
+            std::cout << "\n✅ Food choice logged! (+" << points << " points)\n";
+            return;
         }
+
 
     }
     std::cout << "\n✨ Achievement Progress Updated!\n";
@@ -110,13 +117,7 @@ void logNewAction(UserProfile& user, ActionLogger& logger, AchievementSystem& ac
     std::cin.ignore();  // Pause
 }
 
-//void ActionLogger::loadFromFile(const std::string& filename) {
-//    if(!std::filesystem::exists(filename)) return;
-//
-//    std::ifstream file(filename);
-//    if(!file) throw std::runtime_error("Cannot load actions");
-//    // Rest of existing loading code...
-//}
+
 
 void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger, AchievementSystem& achievements)
  {
@@ -125,7 +126,9 @@ void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger,
     mainMenu.addItem("Log New Action");
     mainMenu.addItem("Save & Exit");
 
-    while (true) {
+     DailyChallenge challenge("Save 10kg CO₂ today!", 10);  // You can customize
+
+     while (true) {
         switch (mainMenu.display()) {
             case 1:
                 dashboard.display();
@@ -135,7 +138,7 @@ void mainMenuLoop(UserProfile& user, Dashboard& dashboard, ActionLogger& logger,
                 break;
 
             case 2:
-                logNewAction(user,logger , achievements);
+                logNewAction(user,logger , achievements, challenge);
                 break;
 
 

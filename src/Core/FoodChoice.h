@@ -16,10 +16,12 @@ public:
     std::time_t getDate() const { return mealDate; }
     std::string getDetails() const override;
     int calculatePoints() const override;
-
+    void applyEffects(UserProfile& user, DailyChallenge& challenge) override;
     // Add these getters
     std::string getMealType() const { return mealType; }
     bool isVeganMeal() const { return isVegan; }
+
+    std::string getSummary() const override;
 };
 
 #endif

@@ -98,6 +98,12 @@
 		<Unit filename="C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/ActionLogger.h">
 			<Option target="Eco_Project"/>
 		</Unit>
+		<Unit filename="C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/DailyChallenge.cpp">
+			<Option target="Eco_Project"/>
+		</Unit>
+		<Unit filename="C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/DailyChallenge.h">
+			<Option target="Eco_Project"/>
+		</Unit>
 		<Unit filename="C:/Users/USER/CLionProjects/Working_Eco-Tracker_App/src/Core/EcoAction.cpp">
 			<Option target="Eco_Project"/>
 		</Unit>

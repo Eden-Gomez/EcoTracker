@@ -15,6 +15,10 @@ int ActionLogger::getTotalPoints() const {
     }
     return total;
 }
+const std::vector<std::unique_ptr<EcoAction>>& ActionLogger::getRecentActions() const {
+    return actions;
+}
+
 
 void ActionLogger::saveToFile(const std::string& filename) const {
     std::filesystem::create_directories(

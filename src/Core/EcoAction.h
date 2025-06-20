@@ -3,6 +3,8 @@
 
 #include <string>
 #include <ctime>
+#include "UserProfile.h"
+#include "DailyChallenge.h"
 
 class EcoAction {
 protected:
@@ -20,6 +22,12 @@ public:
     float getCo2Saved() const { return co2Saved; }
 
     virtual ~EcoAction() = default;
+
+    virtual void applyEffects(UserProfile& user, DailyChallenge& challenge) = 0;  // pure virtual
+
+    // Add this pure virtual for summaries
+    virtual std::string getSummary() const = 0;
 };
+
 
 #endif // ECOACTION_H

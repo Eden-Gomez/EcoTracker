@@ -16,6 +16,8 @@ public:
     int getTotalPoints() const;
 
     void addAction(std::unique_ptr<EcoAction> action)  ;
+    void displayRecentActions() const;
+    const std::vector<std::unique_ptr<EcoAction>>& getRecentActions() const;
 
 //    {
 //        if(dynamic_cast<TransportAction*>(action.get())) bikeCount++;
