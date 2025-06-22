@@ -28,6 +28,8 @@ public:
     void checkAchievements(const ActionLogger& logger);
     void displayAchievements() const;
     bool isUnlocked(const std::string& name) const;  // MODIFY: Parameter name
+
+
 };
 
 

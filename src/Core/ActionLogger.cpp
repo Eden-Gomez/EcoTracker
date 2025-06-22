@@ -21,9 +21,14 @@ const std::vector<std::unique_ptr<EcoAction>>& ActionLogger::getRecentActions() 
 
 
 void ActionLogger::saveToFile(const std::string& filename) const {
-    std::filesystem::create_directories(
-            std::filesystem::path(filename).parent_path()
-    );
+//    std::filesystem::create_directories(
+//            std::filesystem::path(filename).parent_path()
+//    );
+    auto parentPath = std::filesystem::path(filename).parent_path();
+    if (!parentPath.empty()) {
+        std::filesystem::create_directories(parentPath);
+    }
+
 
     std::ofstream file(filename);
     if(!file) throw std::runtime_error("Cannot save actions");

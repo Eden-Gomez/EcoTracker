@@ -1,5 +1,5 @@
-
-
+//
+//
 #include "../GUI/Dashboard.h"
 #include <iostream>
 #include "../Core/UserProfile.h"
@@ -70,5 +70,5 @@ void Dashboard::display() const {
     }
 
     std::cout << "\nProgress to Next Level:\n";
-    printProgressBar(progressPercentage);
+   printProgressBar(progressPercentage);
 }

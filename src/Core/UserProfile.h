@@ -8,6 +8,8 @@ private:
     std::string username;
     int carbonPoints = 0;
 
+
+
 public:
     explicit UserProfile(const std::string& name);
     void addPoints(int points);
@@ -17,7 +19,7 @@ public:
     void loadFromFile(const std::string& filename);
 
     int getCarbonPoints() const { return carbonPoints; } ;
-
+    std::string getUsername() const { return username; }
 };
 
 
