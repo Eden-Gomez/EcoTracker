@@ -24,7 +24,8 @@ private:
             {"Eco Hero",      false, 0, 1000}   // 1000 total points
     };
 
-public:
+public:2
+
     void checkAchievements(const ActionLogger& logger);
     void displayAchievements() const;
     bool isUnlocked(const std::string& name) const;  // MODIFY: Parameter name
